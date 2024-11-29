@@ -24,8 +24,9 @@ const LandingSection = () => (
         variant="subtle"
       ></Avatar>
 
-      <Heading>Hi, I am Shubham</Heading>
-      <h3>A full-stack developer</h3>
+      <h1>Hi, I am Shubham</h1>
+      <Heading>A passionate full-stack developer.</Heading>
+      <h1>Explore my portfolio below to see my latest projects and discover how I can bring value to your team.</h1>
 
 
 

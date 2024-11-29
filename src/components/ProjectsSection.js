@@ -12,8 +12,8 @@ const dummyText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
 
 const projects = [
   {
-    title: "A Simple Portfolio",
-    description: "A simple React app to showcase my best projects starting as a developer. This project is a part of Meta Front-End Developer Professional Certificate Course. I have hosted this website on Github Pages.",
+    title: "Portfolio Page",
+    description: "You're currently viewing my portfolio website, a project I built to showcase my skills as a front-end developer. Created as part of the Meta Front-End Developer Professional Certificate Course, this site is hosted on GitHub Pages.",
     getImageSrc: () => photo1,
     projectUrl: "https://theshubhamio.github.io/myportfolio/"
   },
