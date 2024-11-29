@@ -13,23 +13,27 @@ const dummyText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
 const projects = [
   {
     title: "A Simple Portfolio",
-    description: "A simple React app to showcase my best projects starting as a developer. This project is a part of Meta Front-End Developer Professional Certificate Course.",
+    description: "A simple React app to showcase my best projects starting as a developer. This project is a part of Meta Front-End Developer Professional Certificate Course. I have hosted this website on Github Pages.",
     getImageSrc: () => photo1,
+    projectUrl: "https://theshubhamio.github.io/myportfolio/"
   },
   {
     title: "Project 2",
     description: dummyText,
     getImageSrc: () => photo2,
+    projectUrl: "https://theshubhamio.github.io/myportfolio/"
   },
   {
     title: "Project 3",
     description: dummyText,
     getImageSrc: () => photo3,
+    projectUrl: "https://theshubhamio.github.io/myportfolio/"
   },
   {
     title: "Project 4",
     description: dummyText,
     getImageSrc: () => photo4,
+    projectUrl: "https://theshubhamio.github.io/myportfolio/"
   },
 ];
 
@@ -62,6 +66,7 @@ const ProjectsSection = () => {
             title={project.title}
             description={project.description}
             imageSrc={project.getImageSrc()}
+            projectUrl={project.projectUrl}
           />
         ))}
       </Box>

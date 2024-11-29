@@ -3,10 +3,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
-const Card = ({ title, description, imageSrc }) => {
+const Card = ({ title, description, imageSrc, projectUrl }) => {
   // Implement the UI for the Card component according to the instructions.
   // You should be able to implement the component with the elements imported above.
   // Feel free to import other UI components from Chakra UI if you wish to.
+  const handleClick = () => {
+    window.open(projectUrl, '_blank');
+  };
   return (
     <VStack
       align="flex-start"
@@ -48,7 +51,7 @@ const Card = ({ title, description, imageSrc }) => {
           {description}
         </Text>
         {/* See More Section */}
-        <HStack spacing={2} color="gray.100" cursor="pointer">
+        <HStack onClick={handleClick} spacing={2} color="gray.100" cursor="pointer">
           <Text fontWeight="bold">See more</Text>
           <FontAwesomeIcon icon={faArrowRight} size="1x" />
         </HStack>
