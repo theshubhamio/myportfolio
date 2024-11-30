@@ -4,7 +4,7 @@ import { Box, Heading } from "@chakra-ui/react";
 import Card from "./Card";
 
 import photo1 from "../images/proj1.png";
-import photo2 from "../images/photo2.jpg";
+import photo2 from "../images/proj2.png";
 import photo3 from "../images/photo3.jpg";
 import photo4 from "../images/photo4.jpg";
 
@@ -18,10 +18,10 @@ const projects = [
     projectUrl: "https://theshubhamio.github.io/myportfolio/"
   },
   {
-    title: "Project 2",
-    description: dummyText,
+    title: "That Snake game",
+    description: "A modern twist on the classic Snake game built with React. Features include a responsive grid, keyboard and UI controls, real-time gameplay, and a dynamic game-over state. Showcases proficiency in state management, user interaction handling, and responsive design principles. Perfect example of blending functionality with intuitive UI for a seamless user experience.",
     getImageSrc: () => photo2,
-    projectUrl: "https://theshubhamio.github.io/myportfolio/"
+    projectUrl: "https://theshubhamio.github.io/thatsnakegame/"
   },
   {
     title: "Project 3",
