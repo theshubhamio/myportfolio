@@ -5,7 +5,7 @@ import Card from "./Card";
 
 import photo1 from "../images/proj1.png";
 import photo2 from "../images/proj2.png";
-import photo3 from "../images/photo3.jpg";
+import photo3 from "../images/proj3.png";
 import photo4 from "../images/photo4.jpg";
 
 const dummyText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
@@ -18,16 +18,16 @@ const projects = [
     projectUrl: "https://theshubhamio.github.io/myportfolio/"
   },
   {
-    title: "That Snake game",
+    title: "That Snake Game",
     description: "A modern twist on the classic Snake game built with React. Features include a responsive grid, keyboard and UI controls, real-time gameplay, and a dynamic game-over state. Showcases proficiency in state management, user interaction handling, and responsive design principles. Perfect example of blending functionality with intuitive UI for a seamless user experience.",
     getImageSrc: () => photo2,
     projectUrl: "https://theshubhamio.github.io/thatsnakegame/"
   },
   {
-    title: "Project 3",
-    description: dummyText,
+    title: "RecallRival Game",
+    description: "RecallRival is a dynamic 2-player memory game built using React, showcasing my skills in state management, dynamic UI rendering, and game logic implementation. The game features a responsive 5x5 grid, turn-based interactions, and player-specific logic with visual indicators. It demonstrates expertise in JavaScript, CSS animations, and creating intuitive user experiences. Designed with scalability, it supports both computer and same-screen multiplayer modes, with future scope for backend integration.",
     getImageSrc: () => photo3,
-    projectUrl: "https://theshubhamio.github.io/myportfolio/"
+    projectUrl: "https://theshubhamio.github.io/recallrival/"
   },
   {
     title: "Project 4",
