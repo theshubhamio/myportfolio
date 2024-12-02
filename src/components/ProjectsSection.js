@@ -6,7 +6,7 @@ import Card from "./Card";
 import photo1 from "../images/proj1.png";
 import photo2 from "../images/proj2.png";
 import photo3 from "../images/proj3.png";
-import photo4 from "../images/photo4.jpg";
+import photo4 from "../images/proj4.png";
 
 const dummyText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
 
@@ -30,10 +30,10 @@ const projects = [
     projectUrl: "https://theshubhamio.github.io/recallrival/"
   },
   {
-    title: "Project 4",
-    description: dummyText,
+    title: "TypeItHero",
+    description: "ypeItHero is an interactive typing speed game built with React, showcasing real-time keyboard input handling, dynamic state management, and custom animations. Players type falling words before they reach the bottom, with customizable text input and visual feedback for focused words. This project highlights skills in frontend development, user interface design, performance optimization, and problem-solving, demonstrating my ability to create engaging, responsive, and user-centric applications.",
     getImageSrc: () => photo4,
-    projectUrl: "https://theshubhamio.github.io/myportfolio/"
+    projectUrl: "https://theshubhamio.github.io/typeithero/"
   },
 ];
 
