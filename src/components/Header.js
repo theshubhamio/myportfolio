@@ -1,14 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { Box, HStack, Link } from "@chakra-ui/react";
+import { Box, HStack, Link, Stack } from "@chakra-ui/react";
 
 const socials = [
-  {
-    icon: faEnvelope,
-    url: "mailto:theshubhamiohub@gmail.com",
-  },
+
   {
     icon: faGithub,
     url: "https://github.com/theshubhamio",
@@ -70,32 +66,92 @@ const Header = () => {
       right={0}
       translateY={0}
       transition="transform 0.3s ease-in-out"
-      backgroundColor="#000000"
+      backgroundColor="#1C1E22"
       zIndex={1000}
-      background="linear-gradient(to bottom, rgba(24, 24, 27, 0.9), rgba(24, 24, 27, 0.03))"
-      backdropFilter="blur(0.5px)"
+      margin="20px"
+      border="2px solid #52575C"
+      backdropFilter="blur(0.9px)"
+      overflow="hidden"
+      _hover={{
+        transform: "scale(1.01)",
+        boxShadow: "xl",
+        borderColor: "#00BCD4", // Change border color on hover
+        transition: "border-color 0.5s ease", // Animate the border color change
+      }}
+      borderRadius={50}
+
+
+
     >
-      <Box color="white" maxWidth="1280px" margin="0 auto">
-        <HStack px={16} py={4} justifyContent="space-between" alignItems="center">
+      <Box color="white" margin="5px">
+        {/* Parent Stack for responsive behavior */}
+        <Stack
+          direction={["column", "row"]}
+          px={8}
+          py={4}
+          spacing={4}
+          justifyContent="space-between"
+          alignItems="center"
+        >
+          {/* Social Links Section */}
           <nav>
-            <HStack spacing={8}>
-              <Link onClick={handleClick("landing")}>TheShubhamIO</Link>
+            <HStack spacing={8}
+              justifyContent={["center", "center"]}
+              alignItems="center"
+              flexWrap="wrap">
+              <Link
+              _hover={{
+                color: "#00BCD4",
+                transform: "scale(1.2)",
+                transition: "all 0.2s ease-in-out",
+              }} 
+              fontSize={"xl"}
+               onClick={handleClick("landing")} fontWeight={"bold"}>TheShubhamIO</Link>
               {socials.map((social, index) => (
-                <Link key={index} href={social.url} target="_blank">
+                <Link
+                _hover={{
+                  color: "#00BCD4",
+                  transform: "scale(1.2)",
+                  transition: "all 0.2s ease-in-out",
+                }} 
+                fontSize={"xl"}
+                key={index} href={social.url} target="_blank">
                   <FontAwesomeIcon icon={social.icon} size="lg" />
                 </Link>
               ))}
             </HStack>
           </nav>
+
+          {/* Internal Links Section */}
           <nav>
-            <HStack spacing={8}>
-              <Link onClick={handleClick("projects")}>Projects</Link>
-              <Link onClick={handleClick("contactme")}>Contact me</Link>
+            <HStack
+              spacing={8}
+              justifyContent={["center", "center"]}
+              alignItems="center"
+              flexWrap="wrap"
+            >
+              <Link 
+              _hover={{
+                color: "#00BCD4",
+                transform: "scale(1.2)",
+                transition: "all 0.2s ease-in-out",
+              }}
+              fontSize={"xl"}
+              onClick={handleClick("projects")} fontWeight={"bold"}  >Projects</Link>
+              <Link
+              _hover={{
+                color: "#00BCD4",
+                transform: "scale(1.2)",
+                transition: "all 0.2s ease-in-out",
+              }}
+              fontSize={"xl"}
+               onClick={handleClick("contactme")} fontWeight={"bold"} >Contact me</Link>
             </HStack>
           </nav>
-        </HStack>
+        </Stack>
       </Box>
     </Box>
+
   );
 };
 

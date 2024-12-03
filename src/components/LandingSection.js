@@ -1,7 +1,8 @@
 import React from "react";
-import { Avatar, Heading, VStack } from "@chakra-ui/react";
+import { Avatar, Heading, VStack,Text } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
-import shubhamImage from '../images/shubhamsmile1.png';
+import shubhamImage from '../images/tsiocursordp.png';
+
 
 
 
@@ -13,20 +14,33 @@ const LandingSection = () => (
     justifyContent="center"
     alignItems="center"
     isDarkBackground
-    backgroundColor="#000000"
+    backgroundColor="#0B0C10"
     id="landing-section"
   >
+
     <VStack>
 
-      <Avatar name="Shubham"
+      <Avatar
+        name="Shubham"
         src={shubhamImage}
         size="2xl"
         variant="subtle"
-      ></Avatar>
+        
+      />
 
-      <h1>Hi, I am Shubham</h1>
-      <Heading>A passionate full-stack developer.</Heading>
-      <h1>Explore my portfolio below to see my latest projects and discover how I can bring value to your team.</h1>
+      <Text 
+      as="h1" 
+      color="#D6D8DA" 
+      textAlign="center"
+      size="l"
+      p={2}
+      >Hi, I am Shubham</Text>
+
+      <Heading as="h1"
+        textAlign="center" size="2xl" color="#D6D8DA"
+      >
+        A front-end developer
+      </Heading>
 
 
 

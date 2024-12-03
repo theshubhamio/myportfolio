@@ -1,6 +1,6 @@
-import { Heading, HStack, Image, Text, VStack } from "@chakra-ui/react";
+import { Heading, HStack, Image, Text, VStack, Box } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowCircleRight, faArrowRight, faArrowUpRightDots } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
 const Card = ({ title, description, imageSrc, projectUrl }) => {
@@ -13,47 +13,69 @@ const Card = ({ title, description, imageSrc, projectUrl }) => {
   return (
     <VStack
       align="flex-start"
-      borderRadius="lg"
       overflow="hidden"
-      bg="white"
-      width="90%"
       alignItems="center"
       justifyContent="center"
-      boxShadow="md"
-      backgroundColor="gray.500"
-      backdropFilter="blur(0.5px)"
-      
-
-      background="linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,1) 100%)"
-
+      margin="25px"
+      borderRadius={"25px"}
+      background={"#0B0C10"}
+      border="2px solid #52575C"
+      transition="all 0.3s ease-in-out" // Adding smooth transition for border and other styles
+      _hover={{
+        transform: "scale(1.01)",
+        boxShadow: "xl",
+        borderColor: "#00BCD4", // Change border color on hover
+        transition: "border-color 0.5s ease", // Animate the border color change
+      }}
     >
       {/* Image Section */}
-      <Image src={imageSrc}
-        alt={title} width="100%"
-        style={{
-          filter: "grayscale(1%)",
-          opacity: 0.9
-        }}
+      <div style={{ position: 'relative', width: '100%', height: 'auto' }}>
+        <Image
+          src={imageSrc}
+          alt={title}
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            filter: 'brightness(0.9) contrast(0.9) opacity(0.9)',
+          }}
+        />
 
-         />
+        {/* Gradient Overlay */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(11, 12, 16, 1) 100%)',
+            pointerEvents: 'none',
+          }}
+        ></div>
+      </div>
 
       {/* Content Section */}
-      <VStack align="flex-start"
-        p={4}
-        spacing={4}
-      >
-        {/* Title */}
-        <Heading as="h3" size="md" color="gray.50">
+      <VStack align="flex-start" p={5} spacing={5}>
+        <Heading as="h3" size="xl" color="#D6D8DA">
           {title}
         </Heading>
-        {/* Description */}
-        <Text color="gray.200" fontSize="sm">
+        <Text color="#A0A4A8" fontSize="xl">
           {description}
         </Text>
-        {/* See More Section */}
-        <HStack onClick={handleClick} spacing={2} color="gray.100" cursor="pointer">
-          <Text fontWeight="bold">See more</Text>
-          <FontAwesomeIcon icon={faArrowRight} size="1x" />
+        <HStack
+          onClick={handleClick}
+          spacing={2}
+          color="gray.100"
+          cursor="pointer"
+          _hover={{
+            color: '#00BCD4',
+            transform: 'scale(1.05)',
+            transition: 'all 0.2s ease-in-out',
+          }}
+        >
+          <Text color="#D6D8DA" fontWeight="bold" fontSize="2xl">Visit now</Text>
+          <FontAwesomeIcon icon={faArrowRight} size="2x" />
         </HStack>
       </VStack>
     </VStack>
