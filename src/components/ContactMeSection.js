@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useFormik } from "formik";
 import {
   Box,
@@ -14,11 +14,38 @@ import {
 } from "@chakra-ui/react";
 import * as Yup from "yup";
 import FullScreenSection from "./FullScreenSection";
-import useSubmit from "../hooks/useSubmit";
 import { useAlertContext } from "../context/alertContext";
 
+// Mock submit function (replace with your actual API call)
+const useSubmit = () => {
+  const [isLoading, setIsLoading] = React.useState(false);
+
+  const submit = async (values) => {
+    setIsLoading(true);
+    try {
+      // Simulate an API call
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      // Simulate successful submission
+      return {
+        type: 'success',
+        message: 'Submission successful!'
+      };
+    } catch (error) {
+      return {
+        type: 'error',
+        message: 'Submission failed'
+      };
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return { isLoading, submit };
+};
+
 const ContactMeSection = () => {
-  const { isLoading, response, submit } = useSubmit();
+  const { isLoading, submit } = useSubmit();
   const { onOpen } = useAlertContext();
 
   const formik = useFormik({
@@ -37,6 +64,10 @@ const ContactMeSection = () => {
     onSubmit: async (values, { resetForm }) => {
       try {
         const result = await submit(values);
+        console.log("Result from submit:", result);
+        console.log("Result from submit:", values);
+
+
         if (result?.type === "success") {
           onOpen({
             type: "success",
@@ -58,18 +89,6 @@ const ContactMeSection = () => {
       }
     },
   });
-
-  useEffect(() => {
-    if (response && response.type !== "success") {
-      console.log("UseEffect Responce: ")
-      console.log(response)
-      onOpen(response); // Only trigger onOpen if response is valid and doesn't trigger success again
-      if (response.type === "success") {
-        formik.resetForm();
-      }
-    }
-  }, [response, onOpen, formik]);
-  
 
   return (
     <FullScreenSection
@@ -120,7 +139,8 @@ const ContactMeSection = () => {
               </FormControl>
               <FormControl isInvalid={formik.touched.type && !!formik.errors.type}>
                 <FormLabel color="#D6D8DA" htmlFor="type">Type of enquiry</FormLabel>
-                <Select id="type"
+                <Select 
+                  id="type"
                   name="type"
                   style={{
                     borderWidth: "2px",
@@ -129,7 +149,8 @@ const ContactMeSection = () => {
                       borderColor: "#00BCD4",
                     },
                   }}
-                  {...formik.getFieldProps("type")}>
+                  {...formik.getFieldProps("type")}
+                >
                   <option color="#D6D8DA" value="">Select an option</option>
                   <option color="#D6D8DA" value="hireMe">Freelance project proposal</option>
                   <option color="#D6D8DA" value="openSource">Open source consultancy session</option>
@@ -161,6 +182,7 @@ const ContactMeSection = () => {
                 width="full"
                 _hover={{ backgroundColor: "#00BCD4" }}
                 isLoading={isLoading}
+                mb={10}
               >
                 Submit
               </Button>

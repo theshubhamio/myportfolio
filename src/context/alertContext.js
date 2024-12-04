@@ -1,4 +1,4 @@
-import {createContext, useContext, useState} from "react";
+import { createContext, useContext, useState } from "react";
 
 const AlertContext = createContext(undefined);
 
@@ -15,7 +15,8 @@ export const AlertProvider = ({ children }) => {
     <AlertContext.Provider
       value={{
         ...state,
-        onOpen: (type, message) => setState({ isOpen: true, type, message }),
+        // Modified to accept an object with type and message
+        onOpen: ({ type, message }) => setState({ isOpen: true, type, message }),
         onClose: () => setState({ isOpen: false, type: '', message: '' }),
       }}
     >
@@ -24,4 +25,13 @@ export const AlertProvider = ({ children }) => {
   );
 };
 
-export const useAlertContext = () => useContext(AlertContext);
+export const useAlertContext = () => {
+  const context = useContext(AlertContext);
+  
+  // Optional: Add a safety check
+  if (context === undefined) {
+    throw new Error('useAlertContext must be used within an AlertProvider');
+  }
+  
+  return context;
+};

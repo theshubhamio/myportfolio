@@ -52,7 +52,6 @@ const ProjectsSection = () => {
       <Box
         display="grid"
         gridTemplateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
-        m={10}
       >
         {projects.map((project) => (
 

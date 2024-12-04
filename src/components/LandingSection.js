@@ -37,7 +37,11 @@ const LandingSection = () => (
       >Hi, I am Shubham</Text>
 
       <Heading as="h1"
-        textAlign="center" size="2xl" color="#D6D8DA"
+        textAlign="center"
+        size="2xl"
+        color="#D6D8DA"
+        ml={10}
+        mr={10}
       >
         A front-end developer
       </Heading>

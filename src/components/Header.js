@@ -1,10 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { Box, HStack, Link, Stack } from "@chakra-ui/react";
 
 const socials = [
-
   {
     icon: faGithub,
     url: "https://github.com/theshubhamio",
@@ -13,6 +12,10 @@ const socials = [
     icon: faInstagram,
     url: "https://instagram.com/theshubhamio",
   },
+  {
+    icon: faYoutube,
+    url: "https://youtube.com/@theshubhamio",
+  }
 ];
 
 const Header = () => {
@@ -99,14 +102,7 @@ const Header = () => {
               justifyContent={["center", "center"]}
               alignItems="center"
               flexWrap="wrap">
-              <Link
-              _hover={{
-                color: "#00BCD4",
-                transform: "scale(1.2)",
-                transition: "all 0.2s ease-in-out",
-              }} 
-              fontSize={"xl"}
-               onClick={handleClick("landing")} fontWeight={"bold"}>TheShubhamIO</Link>
+              
               {socials.map((social, index) => (
                 <Link
                 _hover={{
