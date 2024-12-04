@@ -2,8 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { Box, HStack, Link, Stack } from "@chakra-ui/react";
+import { faEnvelope, faSignsPost } from "@fortawesome/free-solid-svg-icons";
 
 const socials = [
+  
   {
     icon: faGithub,
     url: "https://github.com/theshubhamio",
@@ -15,6 +17,10 @@ const socials = [
   {
     icon: faYoutube,
     url: "https://youtube.com/@theshubhamio",
+  },
+  {
+    icon: faEnvelope,
+    url: "mailto: theshubhamiohub@gmail.com",
   }
 ];
 
